@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 278497615787667755}
   - component: {fileID: 1449307761416580514}
   - component: {fileID: 1449307761416580525}
+  - component: {fileID: 150827230523701143}
   m_Layer: 0
   m_Name: 'Bullet '
   m_TagString: Untagged
@@ -115,3 +116,16 @@ CapsuleCollider:
   m_Height: 0.48
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.09}
+--- !u!114 &150827230523701143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791747016359842046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6658d0ee55d086845a06d2943face1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesSystem: {fileID: 7333243272839120153, guid: 2d84534fd17b447409709d564b4b073e, type: 3}
