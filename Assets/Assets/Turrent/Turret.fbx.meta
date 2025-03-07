@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 949ce44a7582205428ad1f8ef5194b32
+guid: f76070612f513dc458c5a53f69fd110c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,38 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tank_cannon
-    second: {fileID: 2100000, guid: a401357748c5d9c4ba34de437a5948f0, type: 2}
+      name: Base_color
+    second: {fileID: 2100000, guid: 46f15486962a9b046909b7061827ed77, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tank_cannon_02
-    second: {fileID: 2100000, guid: af6ce91c70a5eb8459af7de4b95753fa, type: 2}
+      name: Base_color_02
+    second: {fileID: 2100000, guid: 98838b7d3ecbb0b4cbac338cfdfbe7f5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tank_minigun_emission
-    second: {fileID: 2100000, guid: 731892e2cb120a940aa3b4fef035b421, type: 2}
+      name: Base_color_3
+    second: {fileID: 2100000, guid: 02701fcbb05195a4995c206e3ff4d537, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tank_minigun_weapon
-    second: {fileID: 2100000, guid: f9213f2b8d979cd418c07146012252bb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tank_turret_top
-    second: {fileID: 2100000, guid: 999389296ceaedb439719a2279f588e0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Whell
-    second: {fileID: 2100000, guid: 7a1c5cb71621db54999d8ea8046a183b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Whell_inner
-    second: {fileID: 2100000, guid: 7303e8fe924f59a46aae3f695641d838, type: 2}
+      name: Emission
+    second: {fileID: 2100000, guid: a281c0eccb2ef4048aa2a45d35321a05, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,7 +54,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.8
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -120,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.008
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
