@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(TankTurret), typeof(TankHealth))]
+[RequireComponent(typeof(TankTurret), typeof(TankHealth), typeof(TankWeapon))]
 public class TankController : MonoBehaviour
 {
     public float moveSpeed = 5.0f, rotationSpeed = 4.0f;

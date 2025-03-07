@@ -11,11 +11,21 @@ public class TankTurret : MonoBehaviour
 
     private RaycastHit hit;
 
-    
+    private TankController tankController;
 
-    
+
+    private void Start()
+    {
+        tankController = this.GetComponent<TankController>();
+    }
+
+
     void FixedUpdate()
     {
+
+        if (!tankController.control)
+            return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (!Physics.Raycast(ray, out hit))
