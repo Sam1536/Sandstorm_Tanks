@@ -14,7 +14,7 @@ public class TankWeapon : MonoBehaviour
 
     [Space(10)]
     public float reloadTime = .4f;
-    public float shotForce = 60f;
+    public float shotForce = 120f;
 
     private bool canShot = true;
 
