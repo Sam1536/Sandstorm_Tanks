@@ -260,6 +260,9 @@ GameObject:
   m_Component:
   - component: {fileID: 447167106}
   - component: {fileID: 447167107}
+  - component: {fileID: 447167110}
+  - component: {fileID: 447167109}
+  - component: {fileID: 447167108}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Turret
@@ -296,6 +299,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0781114, z: 1.067288}
   m_Center: {x: 0, y: 0.52723694, z: -0.0056094527}
+--- !u!114 &447167108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447167105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13cdf687ea55107438e19e304b63d895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &447167109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447167105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1dbf1963ec90f4081b93507873b343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &447167110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447167105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4247dc71ddf370841b4884fb713c1ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookDistance: 15
+  control: 1
 --- !u!1 &520601128
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +355,7 @@ GameObject:
   - component: {fileID: 520601136}
   m_Layer: 0
   m_Name: Player Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
