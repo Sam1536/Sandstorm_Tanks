@@ -47,7 +47,7 @@ public class TurretHealth : MonoBehaviour
 
         if(life <= 0)
         {
-            turretController.control = false;
+            turretController.DestroyMe();
         }
     }
 
