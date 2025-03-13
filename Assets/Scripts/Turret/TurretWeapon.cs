@@ -26,6 +26,8 @@ public class TurretWeapon : MonoBehaviour
 
 
     private bool canShot = true;
+
+    private bool inArea = false;
     #endregion
 
 
@@ -46,6 +48,8 @@ public class TurretWeapon : MonoBehaviour
         if (!turretController.control)
             return;
 
+        CheckArea();
+
         Shot();
         TurretRotation();
        
@@ -54,9 +58,9 @@ public class TurretWeapon : MonoBehaviour
 
     private void TurretRotation()
     {
-        if (Vector3.Distance(transform.position, player.position) > lookDistance)
+        if (!inArea)
             return;
-
+       
         Vector3 pos = player.position - turret.position;
         pos.y = 0;
 
@@ -65,9 +69,22 @@ public class TurretWeapon : MonoBehaviour
         turret.rotation = Quaternion.Lerp(turret.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 
+
+    private void CheckArea()
+    {
+
+        if (Vector3.Distance(transform.position, player.position) > lookDistance)
+        {
+            inArea = false;
+            return;
+        }
+
+        inArea = true;
+    }
+
     private void Shot()
     {
-        if (!canShot)
+        if (!inArea || !canShot)
             return;
 
         GameObject go = Instantiate(bulletPrefab, shotPosition.position, shotPosition.rotation);
