@@ -4,15 +4,46 @@ using UnityEngine;
 
 public class TankHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public CanvaMainGame canvaMain;
+
+    public float life = 100f;
+
+    [Header("Damage")]
+    public float minDamage = 10f;
+    public float maxDamage = 20f;
+
+    private TankController tankController;
+
+
+    private void Start()
     {
-        
+        ChangeHealthBar();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ChangeHealthBar()
     {
-        
+        canvaMain.HealthValue(life / 100);
+    }
+
+    private void SetDamage()
+    {
+        life -= Random.Range(minDamage, maxDamage);
+
+        ChangeHealthBar();
+
+        if (life <= 0)
+        {
+            GetComponent<TankController>().control = false;
+        }
+           
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            SetDamage();
+        }
     }
 }
