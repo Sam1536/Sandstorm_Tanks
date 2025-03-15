@@ -12,6 +12,10 @@ public class CanvaMainGame : MonoBehaviour
     [Tooltip("Qual é a cena a ser carregada quando clicar no botão Reset?")]
     public string sceneGame = "MainGame";
 
+    [Space(10)]
+    public GameObject panelGameover;
+    public GameObject panelVictory;
+
     public void BackToManu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -26,8 +30,17 @@ public class CanvaMainGame : MonoBehaviour
     public void HealthValue(float health)
     {
         healthBar.fillAmount = health;
-         
 
+    }
+
+    public void ShowGameOver()
+    {
+        panelGameover.SetActive(true);
+    }
+
+    public void ShowVictoryGame()
+    {
+        panelVictory.SetActive(true);
     }
    
 }

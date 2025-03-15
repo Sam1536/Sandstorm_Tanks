@@ -35,6 +35,7 @@ public class TankHealth : MonoBehaviour
         if (life <= 0)
         {
             GetComponent<TankController>().control = false;
+            canvaMain.ShowGameOver();
         }
            
     }

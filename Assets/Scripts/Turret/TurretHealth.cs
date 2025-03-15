@@ -14,6 +14,7 @@ public class TurretHealth : MonoBehaviour
     public Image healthBar;
 
     private TurretController turretController;
+    private CanvaMainGame canvaMain;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class TurretHealth : MonoBehaviour
         if(life <= 0)
         {
             turretController.DestroyMe();
+            canvaMain.ShowVictoryGame();
         }
     }
 

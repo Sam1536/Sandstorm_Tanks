@@ -1051,7 +1051,7 @@ MonoBehaviour:
   shotParticle: {fileID: 1845496802}
   shotPoint: {fileID: 910349697}
   shotBullet: {fileID: 1791747016359842046, guid: 03fef987db3574a4f842282d2c8107a8, type: 3}
-  reloadTime: 4
+  reloadTime: 1
   shotForce: 130
 --- !u!82 &520601136
 AudioSource:
@@ -1479,7 +1479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &777503431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2030,6 +2030,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 745950418}
   sceneGame: MainGame
+  panelGameover: {fileID: 1719855914}
+  panelVictory: {fileID: 777503430}
 --- !u!1 &1002190704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,12 +2319,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 2b5fc8df58124064b91a752fa5f9a409, type: 3}
+    m_FontSize: 80
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
