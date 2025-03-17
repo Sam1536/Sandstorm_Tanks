@@ -47,4 +47,29 @@ public class TankHealth : MonoBehaviour
             SetDamage();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Health"))
+        {
+            SetHealth(other.gameObject.GetComponent<BoxLife>().GetHealth());
+        }
+    }
+
+    private void SetHealth(float amount)
+    {
+        if (life == 100)
+            return;
+
+        if(life + amount > 100)
+        {
+            life = 100;
+        }
+        else
+        {
+            life += amount;
+        }
+
+        ChangeHealthBar();
+    }
 }
