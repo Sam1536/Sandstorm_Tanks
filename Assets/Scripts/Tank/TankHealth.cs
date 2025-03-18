@@ -70,6 +70,6 @@ public class TankHealth : MonoBehaviour
             life += amount;
         }
 
-        ChangeHealthBar();
+        ChangeHealthBar(); 
     }
 }
