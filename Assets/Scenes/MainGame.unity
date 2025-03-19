@@ -4784,6 +4784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775a9274f519966459f45b951d1d0206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvaMain: {fileID: 992602087}
 --- !u!1 &1696198226
 GameObject:
   m_ObjectHideFlags: 0
@@ -11754,8 +11755,9 @@ GameObject:
   - component: {fileID: 4989492569819981571}
   - component: {fileID: 5213094289473409664}
   - component: {fileID: 8293044211753043376}
+  - component: {fileID: 8293044211753043377}
   m_Layer: 0
-  m_Name: Silo_new
+  m_Name: SiloOriginal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11774,3 +11776,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0491011, y: 3.6587248, z: 1.0491011}
   m_Center: {x: 0.00037956238, y: 1.8035221, z: -0.005028069}
+--- !u!114 &8293044211753043377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8293044211753043375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7066e67abed1741ac9932850c63fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,16 +16,23 @@ public class SiloController : MonoBehaviour
         //Debug.Log(total);
     }
 
-    private void SetDestroy()
+    public void SetDestroy()
     {
         total -= 1;
 
         if(total == 0)
         {
-             
+            StartCoroutine(Victory());
         }
 
         ChangeUI();
+    }
+
+    IEnumerator Victory()
+    {
+        yield return new WaitForSeconds(3);
+        canvaMain.ShowVictoryGame();
+
     }
 
     private void ChangeUI()
