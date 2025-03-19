@@ -12,6 +12,9 @@ public class CanvaMainGame : MonoBehaviour
     [Tooltip("Qual é a cena a ser carregada quando clicar no botão Reset?")]
     public string sceneGame = "MainGame";
 
+    [Tooltip("Componente de texto com a contagem de silos destruido")]
+    public Text siloCount;
+
     [Space(10)]
     public GameObject panelGameover;
     public GameObject panelVictory;
@@ -41,6 +44,11 @@ public class CanvaMainGame : MonoBehaviour
     public void ShowVictoryGame()
     {
         panelVictory.SetActive(true);
+    }
+
+    public void ChangeSiloUI(int count)
+    {
+        siloCount.text = count.ToString();
     }
    
 }
