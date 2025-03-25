@@ -8,15 +8,10 @@ public class TankController : MonoBehaviour
 {
     public float moveSpeed = 5.0f, rotationSpeed = 4.0f;
 
+    public AudioSource audioSource;
+
     [HideInInspector]
     public  bool control = true;
-
-
-    void Start()
-    {
-        
-    }
-
    
     void Update()
     {
@@ -31,14 +26,19 @@ public class TankController : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
-
+        
         Vector3 moveDirection = new Vector3(hInput, 0, vInput);
         moveDirection.Normalize();
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
 
         if(moveDirection == Vector3.zero)
+        {
+            audioSource.Play();
+            //Debug.Log(audioSource + "audio");
             return;
+        }
+           
 
         Quaternion rotation = Quaternion.LookRotation(moveDirection, Vector3.up);
 
