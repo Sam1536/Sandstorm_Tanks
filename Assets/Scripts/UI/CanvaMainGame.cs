@@ -19,6 +19,7 @@ public class CanvaMainGame : MonoBehaviour
     public GameObject panelGameover;
     public GameObject panelVictory;
 
+
     public void BackToManu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -39,11 +40,13 @@ public class CanvaMainGame : MonoBehaviour
     public void ShowGameOver()
     {
         panelGameover.SetActive(true);
+       
     }
 
     public void ShowVictoryGame()
     {
         panelVictory.SetActive(true);
+
     }
 
     public void ChangeSiloUI(int count)

@@ -9,14 +9,25 @@ public class TankController : MonoBehaviour
     public float moveSpeed = 5.0f, rotationSpeed = 4.0f;
 
     public AudioSource audioSource;
+    private TankHealth tankHealth;
 
     [HideInInspector]
     public  bool control = true;
-   
+
+    private void Start()
+    {
+        tankHealth = GetComponent<TankHealth>(); 
+    }
+
     void Update()
     {
-        if (!control)
+        if (!control && tankHealth.life <= 0)
+        {
+           
+            audioSource.enabled = false;
             return;
+            
+        }
         
         MoveTank();
     }
@@ -36,7 +47,7 @@ public class TankController : MonoBehaviour
         {
             audioSource.Play();
             //Debug.Log(audioSource + "audio");
-            return;
+           
         }
            
 

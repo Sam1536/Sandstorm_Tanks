@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretWeapon : MonoBehaviour
+public class TurretWeaponTest : MonoBehaviour
 {
     #region Variables
     public float lookDistance = 15f;
@@ -10,8 +10,7 @@ public class TurretWeapon : MonoBehaviour
 
     private Transform player;
     public Transform turret;
-    private TankHealth tankHealth;// Referência para a vida do tanque
-    private TankController tankController;
+    private TankHealth tankHealth; // Referência para a vida do tanque
 
     private TurretController turretController;
 
@@ -21,18 +20,16 @@ public class TurretWeapon : MonoBehaviour
     public GameObject bulletPrefab;
     public float reloadTime = .9f;
     public float shotForce = 120f;
-    
+
 
     [Space(15)]
     public AudioSource audioSource;
 
 
     public bool canShot = true;
-
     public bool inArea = false;
 
     #endregion
-
 
     void Start()
     {
@@ -47,11 +44,8 @@ public class TurretWeapon : MonoBehaviour
         }
 
         turretController = GetComponent<TurretController>();
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!turretController.control)
@@ -67,27 +61,22 @@ public class TurretWeapon : MonoBehaviour
         CheckArea();
         Shot();
         TurretRotation();
-       
     }
-
 
     private void TurretRotation()
     {
         if (!inArea)
             return;
-       
+
         Vector3 pos = player.position - turret.position;
         pos.y = 0;
 
         Quaternion toRotation = Quaternion.LookRotation(pos);
-
         turret.rotation = Quaternion.Lerp(turret.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 
-
     private void CheckArea()
     {
-
         if (Vector3.Distance(transform.position, player.position) > lookDistance)
         {
             inArea = false;
@@ -95,15 +84,10 @@ public class TurretWeapon : MonoBehaviour
         }
 
         inArea = true;
-
-
     }
 
     public void Shot()
     {
-        //if (!inArea || !canShot)
-        // return;
-
         // Adiciona a verificação para garantir que o tanque ainda está vivo
         if (!inArea || !canShot || (tankHealth != null && tankHealth.life <= 0))
             return;
@@ -113,12 +97,8 @@ public class TurretWeapon : MonoBehaviour
         Destroy(go, 3f);
 
         canShot = false;
-
         StartCoroutine(Reload());
-
         audioSource.Play();
-
-
     }
 
     private IEnumerator Reload()
@@ -127,3 +107,5 @@ public class TurretWeapon : MonoBehaviour
         canShot = true;
     }
 }
+
+

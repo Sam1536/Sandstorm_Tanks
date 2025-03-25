@@ -7,6 +7,8 @@ public class TankHealth : MonoBehaviour
 
     public CanvaMainGame canvaMain;
 
+    private TurretWeapon turretWeapon;
+
     public float life = 100f;
 
     [Header("Damage")]
@@ -14,6 +16,7 @@ public class TankHealth : MonoBehaviour
     public float maxDamage = 20f;
 
     private TankController tankController;
+   
 
 
     private void Start()
@@ -36,8 +39,9 @@ public class TankHealth : MonoBehaviour
         {
             GetComponent<TankController>().control = false;
             canvaMain.ShowGameOver();
+            
         }
-           
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,7 +49,11 @@ public class TankHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             SetDamage();
+
         }
+
+       
+       
     }
 
     private void OnTriggerEnter(Collider other)

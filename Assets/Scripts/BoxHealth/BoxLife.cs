@@ -8,7 +8,7 @@ public class BoxLife : MonoBehaviour
 
     public float healthAmount = 35f;
 
-    public float destroyTime = 1f;
+    public float destroyTime = 0.5f;
 
 
     public float GetHealth() 

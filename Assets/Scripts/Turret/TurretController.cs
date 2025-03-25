@@ -15,13 +15,6 @@ public class TurretController : MonoBehaviour
 
     
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
-
     public void DestroyMe()
     {
         control = false;
