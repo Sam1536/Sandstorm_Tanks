@@ -127,7 +127,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314466256668330541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -189,18 +189,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314466256668330541}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13cdf687ea55107438e19e304b63d895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookDistance: 15
-  rotationSpeed: 6
+  lookDistance: 40
+  rotationSpeed: 3
   turret: {fileID: 1314466257572710157}
   shotPosition: {fileID: 1314466258221025627}
-  bulletPrefab: {fileID: 1791747016359842046, guid: 03fef987db3574a4f842282d2c8107a8, type: 3}
-  reloadTime: 1
-  shotForce: 120
+  bulletPrefab: {fileID: 1791747016359842046, guid: 875af2bc084716c438322d3fc5bdeb90, type: 3}
+  reloadTime: 2
+  shotForce: 500
   audioSource: {fileID: 1314466256998080581}
   canShot: 1
   inArea: 0
