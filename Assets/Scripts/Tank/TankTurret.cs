@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankTurret : MonoBehaviour
 {
@@ -13,12 +14,14 @@ public class TankTurret : MonoBehaviour
 
     private TankController tankController;
 
+    public RectTransform crosshairUI; // Arraste o GameObject da mira aqui pelo Unity
+
+
 
     private void Start()
     {
         tankController = this.GetComponent<TankController>();
     }
-
 
     void FixedUpdate()
     {
@@ -38,5 +41,12 @@ public class TankTurret : MonoBehaviour
         Quaternion toRotation = Quaternion.LookRotation(point);
 
         turrent.rotation = Quaternion.Lerp(turrent.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+        // Atualiza a posição da mira
+        if (crosshairUI != null)
+        {
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(hit.point);
+            crosshairUI.position = screenPos;
+        }
     }
 }

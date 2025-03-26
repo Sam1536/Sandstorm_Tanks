@@ -10,9 +10,12 @@ public class TankController : MonoBehaviour
 
     public AudioSource audioSource;
     private TankHealth tankHealth;
+    private CanvaMainGame canvaMainGame;
 
     [HideInInspector]
     public  bool control = true;
+
+
 
     private void Start()
     {
@@ -22,13 +25,11 @@ public class TankController : MonoBehaviour
     void Update()
     {
         if (!control && tankHealth.life <= 0)
-        {
-           
+        {  
             audioSource.enabled = false;
             return;
-            
         }
-        
+
         MoveTank();
     }
 
@@ -43,9 +44,23 @@ public class TankController : MonoBehaviour
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
 
-        if(moveDirection == Vector3.zero)
+        if (moveDirection != Vector3.zero) // NOVO
         {
-            audioSource.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            audioSource.Stop(); // Para o som quando o tanque não se move
+            return; 
+        }
+
+
+       // if (moveDirection == Vector3.zero) ANTIGO
+        {
+           // audioSource.Play();
             //Debug.Log(audioSource + "audio");
            
         }

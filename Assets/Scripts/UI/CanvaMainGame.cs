@@ -8,9 +8,19 @@ public class CanvaMainGame : MonoBehaviour
 {
     [Header("PLayer Health")]
     public Image healthBar;
+    public AudioSource audioVictory;
+    public AudioSource background;
+    [SerializeField]private AudioSource audioGameover;
+
+    private TankController tankController;
+    private TankWeapon tankWeapon;
+    private TankTurret tankTurret;
 
     [Tooltip("Qual é a cena a ser carregada quando clicar no botão Reset?")]
     public string sceneGame = "MainGame";
+    public string sceneEnd = "SceneThanks";
+
+    public float nextScene = 5f;
 
     [Tooltip("Componente de texto com a contagem de silos destruido")]
     public Text siloCount;
@@ -19,6 +29,14 @@ public class CanvaMainGame : MonoBehaviour
     public GameObject panelGameover;
     public GameObject panelVictory;
 
+    private void Start()
+    {
+        tankController = FindObjectOfType<TankController>();
+        tankWeapon = FindObjectOfType<TankWeapon>();
+        tankTurret = FindObjectOfType<TankTurret>();
+        audioGameover = FindObjectOfType<AudioSource>();
+
+    }
 
     public void BackToManu()
     {
@@ -40,12 +58,19 @@ public class CanvaMainGame : MonoBehaviour
     public void ShowGameOver()
     {
         panelGameover.SetActive(true);
-       
+        audioGameover.Play();
+
     }
 
     public void ShowVictoryGame()
     {
         panelVictory.SetActive(true);
+        audioVictory.Play();
+        background.Stop();
+        tankController.enabled = false;
+        tankWeapon.enabled = false;
+        tankTurret.enabled = false;
+        StartCoroutine(NextScene());
 
     }
 
@@ -53,5 +78,12 @@ public class CanvaMainGame : MonoBehaviour
     {
         siloCount.text = count.ToString();
     }
-   
+
+    IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(nextScene);
+        SceneManager.LoadScene(sceneEnd);
+
+    }
+
 }

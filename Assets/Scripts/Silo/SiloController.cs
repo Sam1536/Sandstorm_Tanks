@@ -8,11 +8,13 @@ public class SiloController : MonoBehaviour
 
     public CanvaMainGame canvaMain;
 
+
     // Start is called before the first frame update
     void Start()
     {
         total = gameObject.transform.childCount;
         ChangeUI();
+
         //Debug.Log(total);
     }
 
@@ -30,8 +32,9 @@ public class SiloController : MonoBehaviour
 
     IEnumerator Victory()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         canvaMain.ShowVictoryGame();
+
 
     }
 

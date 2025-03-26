@@ -9,6 +9,8 @@ public class TankHealth : MonoBehaviour
 
     private TurretWeapon turretWeapon;
 
+
+
     public float life = 100f;
 
     [Header("Damage")]
@@ -39,7 +41,8 @@ public class TankHealth : MonoBehaviour
         {
             GetComponent<TankController>().control = false;
             canvaMain.ShowGameOver();
-            
+
+
         }
 
     }
