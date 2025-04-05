@@ -14,7 +14,7 @@ public class TankTurret : MonoBehaviour
 
     private TankController tankController;
 
-    public RectTransform crosshairUI; // Arraste o GameObject da mira aqui pelo Unity
+    public Transform crosshairUI; // Arraste o GameObject da mira aqui pelo Unity
 
 
 
@@ -23,7 +23,8 @@ public class TankTurret : MonoBehaviour
         tankController = this.GetComponent<TankController>();
     }
 
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
 
         if (!tankController.control)
@@ -32,9 +33,10 @@ public class TankTurret : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (!Physics.Raycast(ray, out hit))
+        {
             return;
-        
-
+        }
+     
         Vector3 point = hit.point - turrent.position;
         point.y = 0;
 
@@ -42,11 +44,15 @@ public class TankTurret : MonoBehaviour
 
         turrent.rotation = Quaternion.Lerp(turrent.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
-        // Atualiza a posição da mira
+        //Atualiza a posição da mira
         if (crosshairUI != null)
         {
             Vector3 screenPos = Camera.main.WorldToScreenPoint(hit.point);
             crosshairUI.position = screenPos;
+            return;
         }
+
+
     }
+
 }
