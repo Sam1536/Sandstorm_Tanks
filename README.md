@@ -4,6 +4,6 @@
 
 # Menu
 
-div align="center">
+<div align="center">
 <img max-width="500" src= "https://github.com/user-attachments/assets/28ada259-704e-4d43-9902-e942862501b7"/>
 </div>
