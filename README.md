@@ -5,7 +5,5 @@
 # Menu
 
 div align="center">
-<gif max-width="500" src= "C:\Users\a-agn\Desktop\programas\Godot e Unity asstes e outros coisas\Videos e prints do jogos terminados\Stellacurso Tank\ezgif.com-animated-gif-maker.gif"/>
+<gif max-width="500" src= "https://github.com/user-attachments/assets/28ada259-704e-4d43-9902-e942862501b7"/>
 </div>
-
-
